@@ -3,6 +3,7 @@
 rust_defaults {
     name: "getrandom_defaults",
     crate_name: "getrandom",
+    srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
@@ -15,18 +16,17 @@ rust_defaults {
 rust_test_host {
     name: "getrandom_host_test_src_lib",
     defaults: ["getrandom_defaults"],
-    srcs: ["src/lib.rs"],
 }
 
 rust_test {
     name: "getrandom_device_test_src_lib",
     defaults: ["getrandom_defaults"],
-    srcs: ["src/lib.rs"],
 }
 
 rust_defaults {
     name: "getrandom_defaults_common",
     crate_name: "common",
+    srcs: ["tests/common.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
@@ -40,13 +40,11 @@ rust_defaults {
 rust_test_host {
     name: "getrandom_host_test_tests_common",
     defaults: ["getrandom_defaults_common"],
-    srcs: ["tests/common.rs"],
 }
 
 rust_test {
     name: "getrandom_device_test_tests_common",
     defaults: ["getrandom_defaults_common"],
-    srcs: ["tests/common.rs"],
 }
 
 rust_library {
