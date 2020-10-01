@@ -1,18 +1,19 @@
 name: "getrandom"
-description:
-    "A small cross-platform library for retrieving random data from system "
-    "source"
-
+description: "A small cross-platform library for retrieving random data from system source"
 third_party {
   url {
     type: HOMEPAGE
     value: "https://crates.io/crates/getrandom"
   }
   url {
-    type: GIT
-    value: "https://github.com/rust-random/getrandom"
+    type: ARCHIVE
+    value: "https://static.crates.io/crates/getrandom/getrandom-0.1.14.crate"
   }
   version: "0.1.14"
-  last_upgrade_date { year: 2020 month: 6 day: 18 }
   license_type: NOTICE
+  last_upgrade_date {
+    year: 2020
+    month: 6
+    day: 18
+  }
 }
