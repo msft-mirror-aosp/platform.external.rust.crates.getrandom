@@ -2,18 +2,25 @@
 {
   "presubmit": [
     {
-      "name": "getrandom_host_test_src_lib",
-      "host": true
+      "host": true,
+      "name": "getrandom_host_test_src_lib"
     },
     {
       "name": "getrandom_device_test_src_lib"
     },
     {
-      "name": "getrandom_host_test_tests_common",
-      "host": true
+      "host": true,
+      "name": "getrandom_host_test_tests_common"
     },
     {
       "name": "getrandom_device_test_tests_common"
+    },
+    {
+      "host": true,
+      "name": "rand_core_host_test_src_lib"
+    },
+    {
+      "name": "rand_core_device_test_src_lib"
     }
   ]
 }
