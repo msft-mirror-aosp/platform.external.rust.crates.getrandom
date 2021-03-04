@@ -1,26 +1,24 @@
-#[cfg(feature = "wasm-bindgen")]
-use wasm_bindgen_test::*;
+use super::getrandom_impl;
 
-use getrandom::getrandom;
+#[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
+use wasm_bindgen_test::wasm_bindgen_test as test;
 
 #[cfg(feature = "test-in-browser")]
-wasm_bindgen_test_configure!(run_in_browser);
+wasm_bindgen_test::wasm_bindgen_test_configure!(run_in_browser);
 
-#[cfg_attr(feature = "wasm-bindgen", wasm_bindgen_test)]
 #[test]
 fn test_zero() {
     // Test that APIs are happy with zero-length requests
-    getrandom(&mut [0u8; 0]).unwrap();
+    getrandom_impl(&mut [0u8; 0]).unwrap();
 }
 
-#[cfg_attr(feature = "wasm-bindgen", wasm_bindgen_test)]
 #[test]
 fn test_diff() {
     let mut v1 = [0u8; 1000];
-    getrandom(&mut v1).unwrap();
+    getrandom_impl(&mut v1).unwrap();
 
     let mut v2 = [0u8; 1000];
-    getrandom(&mut v2).unwrap();
+    getrandom_impl(&mut v2).unwrap();
 
     let mut n_diff_bits = 0;
     for i in 0..v1.len() {
@@ -31,18 +29,18 @@ fn test_diff() {
     assert!(n_diff_bits >= v1.len() as u32);
 }
 
-#[cfg_attr(feature = "wasm-bindgen", wasm_bindgen_test)]
 #[test]
 fn test_huge() {
     let mut huge = [0u8; 100_000];
-    getrandom(&mut huge).unwrap();
+    getrandom_impl(&mut huge).unwrap();
 }
 
-#[cfg(any(unix, windows, target_os = "redox", target_os = "fuchsia"))]
+// On WASM, the thread API always fails/panics
+#[cfg(not(target_arch = "wasm32"))]
 #[test]
 fn test_multithreading() {
-    use std::sync::mpsc::channel;
-    use std::thread;
+    extern crate std;
+    use std::{sync::mpsc::channel, thread, vec};
 
     let mut txs = vec![];
     for _ in 0..20 {
@@ -55,7 +53,7 @@ fn test_multithreading() {
             let mut v = [0u8; 1000];
 
             for _ in 0..100 {
-                getrandom(&mut v).unwrap();
+                getrandom_impl(&mut v).unwrap();
                 thread::yield_now();
             }
         });
