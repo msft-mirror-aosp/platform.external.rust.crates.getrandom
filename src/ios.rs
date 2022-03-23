@@ -18,8 +18,7 @@ extern "C" {
 pub fn getrandom_inner(dest: &mut [u8]) -> Result<(), Error> {
     // Apple's documentation guarantees kSecRandomDefault is a synonym for NULL.
     let ret = unsafe { SecRandomCopyBytes(null(), dest.len(), dest.as_mut_ptr()) };
-    // errSecSuccess (from SecBase.h) is always zero.
-    if ret != 0 {
+    if ret == -1 {
         Err(Error::IOS_SEC_RANDOM)
     } else {
         Ok(())
