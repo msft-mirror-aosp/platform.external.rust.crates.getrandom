@@ -11,7 +11,6 @@ use core::{ffi::c_void, num::NonZeroU32, ptr};
 
 const BCRYPT_USE_SYSTEM_PREFERRED_RNG: u32 = 0x00000002;
 
-#[link(name = "bcrypt")]
 extern "system" {
     fn BCryptGenRandom(
         hAlgorithm: *mut c_void,
