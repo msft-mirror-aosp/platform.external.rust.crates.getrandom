@@ -47,6 +47,47 @@
       "path": "external/rust/crates/tokio"
     }
   ],
+  "postsubmit": [
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "apkdmverity.test"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
+    {
+      "name": "getrandom_test_src_lib"
+    },
+    {
+      "name": "getrandom_test_tests_normal"
+    },
+    {
+      "name": "getrandom_test_tests_rdrand"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
+      "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
+    },
+    {
+      "name": "legacykeystore_test"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "virtualizationservice_device_test"
+    }
+  ],
   "presubmit": [
     {
       "name": "ZipFuseTest"
@@ -65,6 +106,12 @@
     },
     {
       "name": "getrandom_test_tests_rdrand"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_test"
@@ -100,6 +147,12 @@
     },
     {
       "name": "getrandom_test_tests_rdrand"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_test"
