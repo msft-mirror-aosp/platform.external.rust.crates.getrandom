@@ -57,25 +57,46 @@
     },
     {
       "path": "external/rust/crates/zerocopy"
+    },
+    {
+      "path": "external/uwb/src"
+    },
+    {
+      "path": "packages/modules/Virtualization/apkdmverity"
+    },
+    {
+      "path": "packages/modules/Virtualization/authfs"
+    },
+    {
+      "path": "packages/modules/Virtualization/avmd"
+    },
+    {
+      "path": "packages/modules/Virtualization/encryptedstore"
+    },
+    {
+      "path": "packages/modules/Virtualization/libs/devicemapper"
+    },
+    {
+      "path": "packages/modules/Virtualization/microdroid_manager"
+    },
+    {
+      "path": "packages/modules/Virtualization/virtualizationmanager"
+    },
+    {
+      "path": "packages/modules/Virtualization/vm"
+    },
+    {
+      "path": "packages/modules/Virtualization/zipfuse"
+    },
+    {
+      "path": "system/security/keystore2"
+    },
+    {
+      "path": "system/security/keystore2/legacykeystore"
     }
   ],
   "presubmit": [
     {
-      "name": "ZipFuseTest"
-    },
-    {
-      "name": "apkdmverity.test"
-    },
-    {
-      "name": "authfs_device_test_src_lib"
-    },
-    {
-      "name": "avmdtool_tests"
-    },
-    {
-      "name": "encryptedstore.test"
-    },
-    {
       "name": "getrandom_test_src_lib"
     },
     {
@@ -83,58 +104,10 @@
     },
     {
       "name": "getrandom_test_tests_rdrand"
-    },
-    {
-      "name": "keystore2_client_tests"
-    },
-    {
-      "name": "keystore2_legacy_blobs_test"
-    },
-    {
-      "name": "keystore2_test"
-    },
-    {
-      "name": "keystore2_test_utils_test"
-    },
-    {
-      "name": "legacykeystore_test"
-    },
-    {
-      "name": "libdm_rust.test"
-    },
-    {
-      "name": "libpvmfw_avb.integration_test"
-    },
-    {
-      "name": "libuwb_core_tests"
-    },
-    {
-      "name": "microdroid_manager_test"
-    },
-    {
-      "name": "virtualizationmanager_device_test"
-    },
-    {
-      "name": "vm.test"
     }
   ],
   "presubmit-rust": [
     {
-      "name": "ZipFuseTest"
-    },
-    {
-      "name": "apkdmverity.test"
-    },
-    {
-      "name": "authfs_device_test_src_lib"
-    },
-    {
-      "name": "avmdtool_tests"
-    },
-    {
-      "name": "encryptedstore.test"
-    },
-    {
       "name": "getrandom_test_src_lib"
     },
     {
@@ -142,39 +115,6 @@
     },
     {
       "name": "getrandom_test_tests_rdrand"
-    },
-    {
-      "name": "keystore2_client_tests"
-    },
-    {
-      "name": "keystore2_legacy_blobs_test"
-    },
-    {
-      "name": "keystore2_test"
-    },
-    {
-      "name": "keystore2_test_utils_test"
-    },
-    {
-      "name": "legacykeystore_test"
-    },
-    {
-      "name": "libdm_rust.test"
-    },
-    {
-      "name": "libpvmfw_avb.integration_test"
-    },
-    {
-      "name": "libuwb_core_tests"
-    },
-    {
-      "name": "microdroid_manager_test"
-    },
-    {
-      "name": "virtualizationmanager_device_test"
-    },
-    {
-      "name": "vm.test"
     }
   ]
 }
