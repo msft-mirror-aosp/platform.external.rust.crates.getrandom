@@ -45,7 +45,7 @@ rust_test {
     crate_name: "getrandom",
     cargo_env_compat: true,
     cargo_pkg_version: "0.2.12",
-    srcs: ["src/lib.rs"],
+    crate_root: "src/lib.rs",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
@@ -65,7 +65,7 @@ rust_test {
     crate_name: "normal",
     cargo_env_compat: true,
     cargo_pkg_version: "0.2.12",
-    srcs: ["tests/normal.rs"],
+    crate_root: "tests/normal.rs",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
@@ -86,7 +86,7 @@ rust_test {
     crate_name: "rdrand",
     cargo_env_compat: true,
     cargo_pkg_version: "0.2.12",
-    srcs: ["tests/rdrand.rs"],
+    crate_root: "tests/rdrand.rs",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
@@ -107,7 +107,7 @@ rust_library {
     crate_name: "getrandom",
     cargo_env_compat: true,
     cargo_pkg_version: "0.2.12",
-    srcs: ["src/lib.rs"],
+    crate_root: "src/lib.rs",
     edition: "2018",
     features: ["std"],
     rustlibs: [
